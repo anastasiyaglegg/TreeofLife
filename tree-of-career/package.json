@@ -1,0 +1,14 @@
+{
+  "name": "tree-of-career",
+  "version": "1.0.0",
+  "description": "An interactive personal portfolio shaped like a tree — roots of origin, branches of character, fruit of skill.",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

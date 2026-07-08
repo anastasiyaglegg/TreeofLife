@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Tree of Career</title>
+<meta name="description" content="An interactive portfolio in the shape of a tree — roots of origin, branches of character, fruit of skill." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <p class="eyebrow">A Portfolio, Rooted &amp; Branching</p>
+    <h1>The Tree of Career</h1>
+    <p class="intro">
+      Every tree carries a life underground before it ever shows a leaf.
+      Below are the roots that fed it, the branches it grew, and the fruit it now offers.
+      <span class="hint">Touch anything that glows.</span>
+    </p>
+  </header>
+
+  <main class="stage" id="stage">
+    <svg
+      class="tree"
+      viewBox="0 0 1000 900"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="An illustrated tree. Its roots represent formative moments, its branches represent personal qualities, and its fruit represent professional skills."
+    >
+      <defs>
+        <radialGradient id="skyGlow" cx="50%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#2c4a34" stop-opacity="0.55" />
+          <stop offset="100%" stop-color="#14231a" stop-opacity="0" />
+        </radialGradient>
+
+        <radialGradient id="soilGlow" cx="50%" cy="0%" r="80%">
+          <stop offset="0%" stop-color="#0c1712" stop-opacity="0.9" />
+          <stop offset="100%" stop-color="#0c1712" stop-opacity="0" />
+        </radialGradient>
+
+        <radialGradient id="fruitShine" cx="35%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#f2d896" />
+          <stop offset="55%" stop-color="#c9a24b" />
+          <stop offset="100%" stop-color="#8f6c26" />
+        </radialGradient>
+
+        <symbol id="leaf" viewBox="0 0 40 24">
+          <path d="M2,20 C10,2 30,2 38,12 C30,10 14,10 2,20 Z" />
+        </symbol>
+
+        <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <rect x="0" y="0" width="1000" height="900" fill="url(#skyGlow)" />
+
+      <!-- ============ GROUND ============ -->
+      <ellipse cx="500" cy="628" rx="480" ry="60" fill="url(#soilGlow)" />
+      <line x1="20" y1="622" x2="980" y2="622" class="ground-line" />
+
+      <!-- ============ ROOTS ============ -->
+      <g class="roots">
+        <path id="root-path-1" class="root-path" d="M478,612 C420,660 360,690 336,748" />
+        <path id="root-path-2" class="root-path" d="M500,616 C500,670 500,730 500,790" />
+        <path id="root-path-3" class="root-path" d="M522,612 C580,660 640,690 664,748" />
+
+        <g class="node root-node" data-type="root" data-key="root1" tabindex="0" role="button"
+           aria-label="Root I: a formative beginning" transform="translate(336,748)">
+          <circle class="node-halo" r="26" />
+          <circle class="node-core" r="10" />
+          <text class="node-tag" y="42">ROOT I</text>
+        </g>
+
+        <g class="node root-node" data-type="root" data-key="root2" tabindex="0" role="button"
+           aria-label="Root II: a formative moment" transform="translate(500,790)">
+          <circle class="node-halo" r="26" />
+          <circle class="node-core" r="10" />
+          <text class="node-tag" y="42">ROOT II</text>
+        </g>
+
+        <g class="node root-node" data-type="root" data-key="root3" tabindex="0" role="button"
+           aria-label="Root III: a formative meeting" transform="translate(664,748)">
+          <circle class="node-halo" r="26" />
+          <circle class="node-core" r="10" />
+          <text class="node-tag" y="42">ROOT III</text>
+        </g>
+      </g>
+
+      <!-- ============ TRUNK ============ -->
+      <path class="trunk" d="M470,620 C463,520 478,420 487,342 L513,342 C522,420 537,520 530,620 Z" />
+      <path class="trunk-grain" d="M487,600 C483,510 492,430 497,350" />
+      <path class="trunk-grain" d="M513,600 C517,510 508,430 503,350" />
+
+      <!-- ============ BRANCHES ============ -->
+      <g class="branches">
+        <path id="branch-path-1" class="branch-path" d="M496,360 C420,320 340,280 296,214" />
+        <path id="branch-path-2" class="branch-path" d="M500,348 C500,280 500,210 500,152" />
+        <path id="branch-path-3" class="branch-path" d="M504,360 C580,320 660,280 704,214" />
+
+        <!-- leaf clusters (decorative) -->
+        <use href="#leaf" class="leaf" transform="translate(250,180) rotate(-20) scale(1.3)" />
+        <use href="#leaf" class="leaf" transform="translate(300,150) rotate(15) scale(1.1)" />
+        <use href="#leaf" class="leaf" transform="translate(340,200) rotate(-40) scale(0.9)" />
+        <use href="#leaf" class="leaf" transform="translate(465,110) rotate(5) scale(1.3)" />
+        <use href="#leaf" class="leaf" transform="translate(535,120) rotate(-10) scale(1.1)" />
+        <use href="#leaf" class="leaf" transform="translate(500,90) rotate(20) scale(0.9)" />
+        <use href="#leaf" class="leaf" transform="translate(750,180) rotate(20) scale(1.3)" />
+        <use href="#leaf" class="leaf" transform="translate(700,150) rotate(-15) scale(1.1)" />
+        <use href="#leaf" class="leaf" transform="translate(660,200) rotate(40) scale(0.9)" />
+
+        <g class="node branch-node" data-type="branch" data-key="branch1" tabindex="0" role="button"
+           aria-label="Branch I: a quality" transform="translate(296,214)">
+          <circle class="node-halo" r="26" />
+          <circle class="node-core" r="10" />
+          <text class="node-tag" y="-24">BRANCH I</text>
+        </g>
+
+        <g class="node branch-node" data-type="branch" data-key="branch2" tabindex="0" role="button"
+           aria-label="Branch II: a quality" transform="translate(500,152)">
+          <circle class="node-halo" r="26" />
+          <circle class="node-core" r="10" />
+          <text class="node-tag" y="-24">BRANCH II</text>
+        </g>
+
+        <g class="node branch-node" data-type="branch" data-key="branch3" tabindex="0" role="button"
+           aria-label="Branch III: a quality" transform="translate(704,214)">
+          <circle class="node-halo" r="26" />
+          <circle class="node-core" r="10" />
+          <text class="node-tag" y="-24">BRANCH III</text>
+        </g>
+      </g>
+
+      <!-- ============ FRUIT ============ -->
+      <g class="fruits">
+        <g class="fruit-unit" id="fruit-unit-1">
+          <path class="stem" d="M370,262 C368,278 366,292 364,306" />
+          <g class="node fruit-node" data-type="fruit" data-key="fruit1" tabindex="0" role="button"
+             aria-label="Fruit I: a skill, ready to fall" transform="translate(364,308)">
+            <circle class="fruit-glow" r="24" />
+            <circle class="fruit-body" r="16" />
+            <text class="node-tag fruit-tag" y="38">FRUIT I</text>
+          </g>
+        </g>
+
+        <g class="fruit-unit" id="fruit-unit-2">
+          <path class="stem" d="M500,232 C500,250 500,266 500,282" />
+          <g class="node fruit-node" data-type="fruit" data-key="fruit2" tabindex="0" role="button"
+             aria-label="Fruit II: a skill, ready to fall" transform="translate(500,284)">
+            <circle class="fruit-glow" r="24" />
+            <circle class="fruit-body" r="16" />
+            <text class="node-tag fruit-tag" y="38">FRUIT II</text>
+          </g>
+        </g>
+
+        <g class="fruit-unit" id="fruit-unit-3">
+          <path class="stem" d="M630,262 C632,278 634,292 636,306" />
+          <g class="node fruit-node" data-type="fruit" data-key="fruit3" tabindex="0" role="button"
+             aria-label="Fruit III: a skill, ready to fall" transform="translate(636,308)">
+            <circle class="fruit-glow" r="24" />
+            <circle class="fruit-body" r="16" />
+            <text class="node-tag fruit-tag" y="38">FRUIT III</text>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </main>
+
+  <!-- ============ SPECIMEN PANEL ============ -->
+  <aside class="panel" id="panel" aria-live="polite">
+    <button class="panel-close" id="panel-close" aria-label="Close">×</button>
+    <p class="panel-kind" id="panel-kind">Root</p>
+    <h2 class="panel-title" id="panel-title">—</h2>
+    <p class="panel-body" id="panel-body">—</p>
+    <button class="panel-reset" id="panel-reset" type="button" hidden>Set the fruit back on the branch</button>
+  </aside>
+
+  <footer class="colophon">
+    <p>Every root fed this trunk. Every branch bore this fruit. Click around — nothing here breaks permanently.</p>
+  </footer>
+
+  <script src="dist/main.js" defer></script>
+</body>
+</html>
+<!-- This is a comment -->

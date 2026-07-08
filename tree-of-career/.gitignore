@@ -1,0 +1,46 @@
+# ---- Dependencies ----
+node_modules/
+jspm_packages/
+
+# ---- TypeScript build info ----
+*.tsbuildinfo
+
+# ---- Compiled output ----
+# NOTE: dist/ is intentionally NOT ignored in this project.
+# This site has no bundler/deploy step (e.g. for GitHub Pages), so the
+# compiled dist/main.js is committed alongside src/main.ts so the site
+# runs immediately after a clone. If you add a build pipeline, uncomment:
+# dist/
+
+# ---- Logs ----
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# ---- Environment / secrets ----
+.env
+.env.local
+.env.*.local
+
+# ---- Editor / IDE ----
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Caches ----
+.cache/
+.eslintcache
+.parcel-cache/
+
+# ---- Coverage / test artifacts ----
+coverage/
