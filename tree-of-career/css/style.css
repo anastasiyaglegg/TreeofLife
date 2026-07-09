@@ -119,7 +119,17 @@ html, body {
   fill: var(--bark);
 }
 
-.trunk-grain {
+.trunk-grain {.trunk-name {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  fill: var(--gold-bright);
+  opacity: 0.65;
+  user-select: none;
+  pointer-events: none;
+}
   fill: none;
   stroke: var(--bark-light);
   stroke-width: 1.2;
